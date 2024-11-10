@@ -2,7 +2,7 @@
 FROM python:3.11
 
 # Set working directory to /app
-WORKDIR /app
+WORKDIR /cyberdckr_app
 
 # Copy application code
 COPY . .
