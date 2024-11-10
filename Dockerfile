@@ -14,4 +14,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Run command when container launches
-CMD ["exec", "gunicorn", "-b", ":5000", "--access-logfile", "-", "--error-logfile", "-", "microblog:app"]
+CMD ["gunicorn", "-b", ":5000", "--access-logfile", "-", "--error-logfile", "-", "microblog:app"]
+
+
+# To create the image - first - note the dot at the end indicates path
+# docker build -t urlshort_img .
+
+# Then to create the container that would have the app
+# docker run -d -ti -p 80:8000 --name Ibra_site urlshort_img
